@@ -38,6 +38,8 @@ public class Bienvenido extends javax.swing.JFrame {
         etiquetaResultado = new javax.swing.JLabel();
         campoResultado = new javax.swing.JTextField();
         botonrestar = new javax.swing.JButton();
+        botonmultiplicar = new javax.swing.JButton();
+        botonDividir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bienvenidos");
@@ -65,31 +67,54 @@ public class Bienvenido extends javax.swing.JFrame {
             }
         });
 
+        botonmultiplicar.setText("Multiplicar");
+        botonmultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonmultiplicarActionPerformed(evt);
+            }
+        });
+
+        botonDividir.setText("Dividir");
+        botonDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDividirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonSumar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                        .addComponent(botonrestar))
+                        .addGap(8, 8, 8)
+                        .addComponent(etiquetaPrimerNumero))
+                    .addComponent(botonSumar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(etiquetaResultado)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(etiquetaPrimerNumero))
-                                .addComponent(etiquetaSegundoNumero)))
+                        .addGap(14, 14, 14)
+                        .addComponent(botonrestar)
+                        .addGap(29, 29, 29)
+                        .addComponent(botonmultiplicar)
+                        .addGap(26, 26, 26)
+                        .addComponent(botonDividir)
+                        .addGap(29, 55, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etiquetaResultado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoNumero2, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                            .addComponent(campoNumero1)
-                            .addComponent(campoResultado))))
-                .addContainerGap(170, Short.MAX_VALUE))
+                        .addComponent(campoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(campoNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etiquetaSegundoNumero)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,20 +122,20 @@ public class Bienvenido extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaPrimerNumero)
-                    .addComponent(campoNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(campoNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaSegundoNumero))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaSegundoNumero)
-                    .addComponent(campoNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonSumar)
-                    .addComponent(botonrestar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(botonrestar)
+                    .addComponent(botonmultiplicar)
+                    .addComponent(botonDividir))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaResultado)
-                    .addComponent(campoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(campoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaResultado))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,7 +156,7 @@ public class Bienvenido extends javax.swing.JFrame {
 
     private void botonrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonrestarActionPerformed
         // TODO add your handling code here:
-        try{ //En esta parte realiza todas las operaciones
+        try{ //En esta parte realiza todas las operaciones boton de accion para restar 
         int num1=Integer.parseInt(campoNumero1.getText());
         int num2=Integer.parseInt(campoNumero2.getText());
         int resultado=num2-num1;
@@ -142,6 +167,35 @@ public class Bienvenido extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Sólo se admiten Números");
         }
     }//GEN-LAST:event_botonrestarActionPerformed
+
+    private void botonmultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonmultiplicarActionPerformed
+        // TODO add your handling code here:
+        // Este boton Multiplica los valores  
+        try {
+             int num1=Integer.parseInt(campoNumero1.getText());
+        int num2=Integer.parseInt(campoNumero2.getText());
+        int resultado=num2*num1;
+        String textoResultado=Integer.toString(resultado);
+        campoResultado.setText(textoResultado);
+        
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(this, "Sólo se admiten Números");
+        }
+ 
+    }//GEN-LAST:event_botonmultiplicarActionPerformed
+
+    private void botonDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDividirActionPerformed
+        // TODO add your handling code here:
+        // Este boton Divide los valores ingresados 
+        try {
+             int num1=Integer.parseInt(campoNumero1.getText());
+             int num2=Integer.parseInt(campoNumero2.getText());
+            double resultado=(double) num2/num1;
+            campoResultado.setText(""+resultado);
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(this, "Sólo se admiten Números");
+        }
+    }//GEN-LAST:event_botonDividirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,7 +233,9 @@ public class Bienvenido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonDividir;
     private javax.swing.JButton botonSumar;
+    private javax.swing.JButton botonmultiplicar;
     private javax.swing.JButton botonrestar;
     private javax.swing.JTextField campoNumero1;
     private javax.swing.JTextField campoNumero2;
